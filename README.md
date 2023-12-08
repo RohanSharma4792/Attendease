@@ -31,5 +31,3 @@ In the dynamic world of event planning and management, individual creators are c
 - **Appwrite Cloud Client SDK** - for Database, Storage, User Authentication, Realtime Notifications
 - **TailwindCSS** - for UI styling
 
-### [Live Demo](https://spot-light-appwrite.vercel.app)
-### [Read Full Article](https://pranaygoel.hashnode.dev/attendease)
