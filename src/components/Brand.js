@@ -13,7 +13,7 @@ function Brand({ size }) {
       to={"/"}
     >
       <img alt="Logo" className={size ?? "w-8"} src={(pathname.includes('dashboard') || pathname.includes('auth')) ? Logo2 : Logo} />
-      <span className={(pathname.includes('dashboard') || pathname.includes('auth')) ? 'hidden' : 'block'}>SpotLight</span>
+      <span className={(pathname.includes('dashboard') || pathname.includes('auth')) ? 'hidden' : 'block'}>Attendease</span>
     </Link>
   );
 }
