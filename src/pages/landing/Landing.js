@@ -77,7 +77,7 @@ function Landing() {
   return (
     <div className="flex-1 bg-white font-poppins select-none">
       <div className="bg-secondary">
-        <section className="flex flex-col text-center w-full items-center py-8 lg:py-16 justify-center gap-8 md:gap-0 container min-h-[75vh] relative">
+        <section className="flex flex-col text-center w-full items-center py-8 lg:py-16 justify-center gap-8 md:gap-0 container min-h-[75vh] min-w-[99.5vw] relative" id = "bgimg">
           <div
             className="flex flex-col gap-4 items-center justify-center z-10"
             style={{ flexBasis: "50%" }}
