@@ -521,6 +521,23 @@ function CreateEventLogic() {
           value: false,
         },
       ],
+    },
+    {
+      label: "Event Type",
+      value: acceptingRsvp,
+      // placeholder: "Please provide a meet password for your event.",
+      cb: setAcceptingRsvp,
+      show: true,
+      options: [
+        {
+          label: "Paid",
+          value: true,
+        },
+        {
+          label: "Unpaid",
+          value: false,
+        },
+      ],
     }
   ];
 
