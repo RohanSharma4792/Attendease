@@ -19,8 +19,8 @@ function GetUsersLogic() {
         try {
             const database = new Databases(client);
             const response = await database.listDocuments(
-                process.env.REACT_APP_DATABASE_ID,
-                process.env.REACT_APP_USERS_COLLECTION_ID,
+                '6586a037e0c947f6af3f',
+                '6586a15e89d7781014ab',
                 [
                     Query.notEqual('userId', JSON.parse(localStorage.getItem('token')).userId)
                 ]

@@ -21,8 +21,8 @@ export default function NotificationProvider({ children }) {
         try {
             const db = new Databases(client);
             const res = await db.createDocument(
-                process.env.REACT_APP_DATABASE_ID,
-                process.env.REACT_APP_NOTIFICATIONS_COLLECTION_ID,
+                '6586a037e0c947f6af3f',
+                '6586a15e89d7781014ab',
                 ID.unique(),
                 data
             );
@@ -37,8 +37,8 @@ export default function NotificationProvider({ children }) {
         try {
             const db = new Databases(client);
             const res = await db.listDocuments(
-                process.env.REACT_APP_DATABASE_ID,
-                process.env.REACT_APP_NOTIFICATIONS_COLLECTION_ID,
+                '6586a037e0c947f6af3f',
+                '6586a15e89d7781014ab',
                 [
                     Query.equal('userId', JSON.parse(localStorage.getItem('spotlight-user'))?.$id),
                     Query.orderDesc('$updatedAt')
@@ -62,7 +62,7 @@ export default function NotificationProvider({ children }) {
 
     useEffect(() => {
         
-        client.subscribe(`databases.${process.env.REACT_APP_DATABASE_ID}.collections.${process.env.REACT_APP_NOTIFICATIONS_COLLECTION_ID}.documents`, (res) => {
+        client.subscribe(`databases.${'6586a037e0c947f6af3f'}.collections.${'6586a15e89d7781014ab'}.documents`, (res) => {
             
             if(res.payload?.userId !== JSON.parse(localStorage.getItem('spotlight-user'))?.$id) return;
             setNotifications(prev => uniqueArray([res.payload, ...prev]));

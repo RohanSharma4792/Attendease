@@ -59,8 +59,8 @@ function CreateEventLogic() {
       setFetchingDoc((prev) => true);
       const database = new Databases(client);
       const response = await database.getDocument(
-        process.env.REACT_APP_DATABASE_ID,
-        process.env.REACT_APP_EVENTS_COLLECTION_ID,
+        '6586a037e0c947f6af3f',
+        '6586a15e89d7781014ab',
         id
       );
       
@@ -228,13 +228,13 @@ function CreateEventLogic() {
         if (typeof image !== "string") {
           if (fetchedDoc?.imageId) {
             const deletedFile = await storage.deleteFile(
-              process.env.REACT_APP_IMAGES_BUCKET_ID,
+              '6586a71897bcf65251f8',
               fetchedDoc?.imageId
             );
             
           }
           uploadedFile = await storage.createFile(
-            process.env.REACT_APP_IMAGES_BUCKET_ID,
+            '6586a71897bcf65251f8',
             ID.unique(),
             image
           );
@@ -246,7 +246,7 @@ function CreateEventLogic() {
           
         } else if (image === null) {
           const deletedFile = await storage.deleteFile(
-            process.env.REACT_APP_IMAGES_BUCKET_ID,
+            '6586a71897bcf65251f8',
             fetchedDoc?.imageId
           );
           
@@ -292,14 +292,14 @@ function CreateEventLogic() {
         }
         const response = id
           ? await databases.updateDocument(
-              process.env.REACT_APP_DATABASE_ID,
-              process.env.REACT_APP_EVENTS_COLLECTION_ID,
+              '6586a037e0c947f6af3f',
+              '6586a15e89d7781014ab',
               id,
               updatedValues
             )
           : await databases.createDocument(
-              process.env.REACT_APP_DATABASE_ID,
-              process.env.REACT_APP_EVENTS_COLLECTION_ID,
+              '6586a037e0c947f6af3f',
+              '6586a15e89d7781014ab',
               ID.unique(),
               { ...value, teamId }
             );

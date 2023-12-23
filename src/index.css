@@ -98,11 +98,12 @@ body,
   background-image: url('/public/event-concert.jpg');
   background-repeat: no-repeat;
   transition: 500ms;
+  /* opacity: 20%; */
 }
-#bgimg:hover{
+/* #bgimg:hover{
   opacity: 0.6;
   transition: 500ms;
-}
+} */
 
 
 @media screen and (max-width: 820px) {
