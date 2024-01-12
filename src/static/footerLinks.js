@@ -4,16 +4,16 @@ export const footerLinks = [
     {
         title: 'Instagram',
         icon: <RiInstagramFill/>,
-        link: '#'
+        link: ''
     },
     {
         title: 'Github',
         icon: <RiGithubFill/>,
-        link: '#'
+        link: ''
     },
     {
         title: 'Twitter',
         icon: <RiTwitterFill/>,
-        link: '#'
+        link: ''
     },
 ]

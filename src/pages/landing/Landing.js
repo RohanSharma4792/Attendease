@@ -1,13 +1,6 @@
 import { useRef } from "react";
 import { Link } from "react-router-dom";
-
-import Marketing from "../../assets/images/marketing.png";
-import Research from "../../assets/images/research.png";
-import Development from "../../assets/images/dev.png";
-import Ui from "../../assets/images/uiux.png";
 import Card from "../../components/Card";
-import Testimonial from "../../components/TestimonialCard";
-import Hero from "../../assets/images/pattern1.jpg";
 import { Navigation, Autoplay, Pagination } from "swiper";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import "swiper/css";
@@ -77,17 +70,17 @@ function Landing() {
   return (
     <div className="flex-1 bg-white font-poppins select-none">
       <div className="bg-secondary">
-        <section className="flex flex-col text-center w-full items-center py-8 lg:py-16 justify-center gap-8 md:gap-0 container min-h-[75vh] min-w-[99.5vw] relative" id = "bgimg">
+        <section className="flex flex-col text-center w-full items-center py-8 lg:py-16 justify-center gap-8 md:gap-0 container min-h-[86vh] min-w-[99.5vw] relative" id = "bgimg">
           <div
             className="flex flex-col gap-4 items-center justify-center z-10"
             style={{ flexBasis: "50%" }}
           >
-            <h1 className=" text-2xl md:text-4xl lg:text-6xl text-slate-100 font-bold leading-relaxed lg:leading-normal drop-shadow-2xl">
+            <h1 id="h1text" className=" text-2xl md:text-4xl lg:text-6xl text-slate-100 font-bold leading-relaxed lg:leading-normal drop-shadow-2xl">
               Spotlight Your Creativity
               <br />
               Curate Unforgettable Events
             </h1>
-            <p className=" md:max-w-[90%] py-4 text-slate-400">
+            <p style={{color:"white"}}className=" md:max-w-[90%] py-4 text-slate-400">
               RSVP and Management Made Effortless for Creators
             </p>
             <div className="inline-flex items-center gap-2">
