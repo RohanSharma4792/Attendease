@@ -21,8 +21,8 @@ export default function NotificationProvider({ children }) {
         try {
             const db = new Databases(client);
             const res = await db.createDocument(
-                '6586a037e0c947f6af3f',
-                '6586a15e89d7781014ab',
+                process.env.REACT_APP_DATABASE_ID,
+                process.env.REACT_APP_EVENTS_COLLECTION_ID,
                 ID.unique(),
                 data
             );

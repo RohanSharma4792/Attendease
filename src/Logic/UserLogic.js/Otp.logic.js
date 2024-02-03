@@ -53,7 +53,7 @@ function OtpLogic() {
   }, [timeLeft]);
 
   const updatePhoneVerificationStatus = async (e) => {
-    e?.preventDefault();
+    e.preventDefault();
     setSigningin((prev) => true);
     setValidateMessage((prev) => null);
     
