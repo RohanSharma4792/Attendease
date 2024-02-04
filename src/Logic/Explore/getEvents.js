@@ -39,8 +39,8 @@ function GetExporeLogic() {
       setLoading((prev) => true);
       const database = new Databases(client);
       const response = await database.listDocuments(
-        '6586a037e0c947f6af3f',
-        '6586a15e89d7781014ab',
+        process.env.REACT_APP_DATABASE_ID,
+        process.env.REACT_APP_EVENTS_COLLECTION_ID,
         (category === null && (filter === null || filter === "total"))
           ? [Query.equal("privacy", "public")]
           : buildQuery()
@@ -72,8 +72,8 @@ function GetExporeLogic() {
       setLoading((prev) => true);
       const database = new Databases(client);
       const response = await database.getDocument(
-        '6586a037e0c947f6af3f',
-        '6586a15e89d7781014ab',
+        process.env.REACT_APP_DATABASE_ID,
+        process.env.REACT_APP_EVENTS_COLLECTION_ID,
         id
       );
       

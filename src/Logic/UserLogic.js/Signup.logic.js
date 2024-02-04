@@ -22,7 +22,7 @@ function SignupLogic() {
     {
       label: "Name",
       name: "name",
-      placeholder: "John Doe",
+      placeholder: "Abhishek sharma",
       value: name,
       cb: setName,
       required: true,
@@ -109,17 +109,19 @@ function SignupLogic() {
     const database = new Databases(client);
     try {
       const response = await account.create(ID.unique(), email, password, name);
-      
-      const addUserToDBResponse = await database.createDocument(
-        process.env.REACT_APP_DATABASE_ID,
-        process.env.REACT_APP_USERS_COLLECTION_ID,
-        ID.unique(),
-        {
-          name,
-          email,
-          userId: response.$id,
+      try{
+        response = await database.createDocument(
+          process.env.REACT_APP_DATABASE_ID,
+          process.env.REACT_APP_USERS_COLLECTION_ID,
+          ID.unique(),
+          {
+            name,
+            email,
+            userId: response.$id,
+          }
+          )
         }
-      )
+        catch(e){console.log(e)}
       
       const loggedInResponse = await account.createEmailSession(
         email,

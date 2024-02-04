@@ -59,10 +59,11 @@ function CreateEventLogic() {
       setFetchingDoc((prev) => true);
       const database = new Databases(client);
       const response = await database.getDocument(
-        '6586a037e0c947f6af3f',
-        '6586a15e89d7781014ab',
+        process.env.REACT_APP_DATABASE_ID,
+        process.env.REACT_APP_EVENTS_COLLECTION_ID,
         id
       );
+
       
       const {
         title,
@@ -176,7 +177,7 @@ function CreateEventLogic() {
   const handleCreateEvent = async (e) => {
     e?.preventDefault();
     const token = JSON.parse(localStorage.getItem("token"));
-    
+    console.log(token.userId)
     setSigningin((prev) => true);
     setValidateMessage((prev) => null);
     try {
@@ -228,13 +229,13 @@ function CreateEventLogic() {
         if (typeof image !== "string") {
           if (fetchedDoc?.imageId) {
             const deletedFile = await storage.deleteFile(
-              '6586a71897bcf65251f8',
+              process.env.REACT_APP_IMAGES_BUCKET_ID,
               fetchedDoc?.imageId
             );
             
           }
           uploadedFile = await storage.createFile(
-            '6586a71897bcf65251f8',
+            process.env.REACT_APP_IMAGES_BUCKET_ID,
             ID.unique(),
             image
           );
@@ -246,7 +247,7 @@ function CreateEventLogic() {
           
         } else if (image === null) {
           const deletedFile = await storage.deleteFile(
-            '6586a71897bcf65251f8',
+            process.env.REACT_APP_IMAGES_BUCKET_ID,
             fetchedDoc?.imageId
           );
           
@@ -292,14 +293,14 @@ function CreateEventLogic() {
         }
         const response = id
           ? await databases.updateDocument(
-              '6586a037e0c947f6af3f',
-              '6586a15e89d7781014ab',
+              process.env.REACT_APP_DATABASE_ID,
+              process.env.REACT_APP_EVENTS_COLLECTION_ID,
               id,
               updatedValues
             )
           : await databases.createDocument(
-              '6586a037e0c947f6af3f',
-              '6586a15e89d7781014ab',
+              process.env.REACT_APP_DATABASE_ID,
+              process.env.REACT_APP_EVENTS_COLLECTION_ID,
               ID.unique(),
               { ...value, teamId }
             );

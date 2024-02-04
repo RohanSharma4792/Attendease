@@ -7,9 +7,6 @@ import ExploreEventCard from "./ExploreEventCard";
 function EventCarousel({ events, title }) {
   const swiperRef = useRef(null);
   
-  
-  
-
   return (
     <div>
       <div className="inline-flex items-center w-full justify-between">

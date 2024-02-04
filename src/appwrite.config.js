@@ -1,8 +1,7 @@
 import { Client } from 'appwrite';
 
 const client = new Client();
-
-client.setEndpoint('https://cloud.appwrite.io/v1').setProject('656235965a4cbff68eeb');
+client.setEndpoint('https://cloud.appwrite.io/v1').setProject(process.env.REACT_APP_PROJECT_ID);
 
 export default client;
 
