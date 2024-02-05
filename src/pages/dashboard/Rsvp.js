@@ -23,8 +23,8 @@ function Rsvps() {
         setLoadingRsvps((prev) => true);
         const database = new Databases(client);
         const response = await database.listDocuments(
-          '6586a037e0c947f6af3f',
-          '6586a15e89d7781014ab',
+          process.env.REACT_APP_DATABASE_ID,
+          process.env.REACT_APP_RSVP_COLLECTION_ID,
           [Query.equal("ownerUserId", userId), Query.equal("pending", true)]
         );
         

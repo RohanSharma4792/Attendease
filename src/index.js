@@ -10,7 +10,6 @@ import UserProvider from "./context/userContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
     <ErrorBoundary fallback={<Error />}>
       <ThemeProvider>
         <UserProvider>
@@ -20,5 +19,4 @@ root.render(
         </UserProvider>
       </ThemeProvider>
     </ErrorBoundary>
-  </React.StrictMode>
 );
