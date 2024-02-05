@@ -62,7 +62,8 @@ export default function RsvpLogic(event) {
   };
 
   const approveRsvp = async (user) => {
-    const {teamId, userId, name, email, documentId, eventName, eventId} = user;
+    const {teamId,userId, name, email, documentId, eventName, eventId} = user;
+
     try {
       const teams = new Teams(client);
       const res = await teams.createMembership(
