@@ -55,8 +55,8 @@ function Sidebar() {
       <NavLink className="sidebar-link" to="events?filter=total">
         <IoCalendarClearOutline /> Events
       </NavLink>
-      <NavLink className="sidebar-link" to="invities">
-        <IoTicketOutline /> Invities
+      <NavLink className="sidebar-link" to="invites">
+        <IoTicketOutline /> Invites
       </NavLink>
       <NavLink className="sidebar-link" to="rsvp">
         <IoPeopleOutline /> RSVPs

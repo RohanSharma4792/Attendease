@@ -61,7 +61,7 @@ function Create() {
               </button>
             </div>
           )}
-          <Button type="submit" loading={signingin} text={pageTitle} />
+          <Button type="submit" loading={signingin} text={id ? "Confirm Edits" : "Create Event"} />
         </form>
       </div>
     </div>

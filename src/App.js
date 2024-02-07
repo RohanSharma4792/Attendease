@@ -71,7 +71,7 @@ function App() {
               }
             />
             <Route
-              path="invities"
+              path="invites"
               element={
                 <DashboardScreenLayout title={"Your Invites"}>
                   <Invites />

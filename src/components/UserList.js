@@ -11,6 +11,7 @@ import client from "../appwrite.config";
 import * as XLSX from "xlsx";
 
 function UserList({
+  email,
   toggleShowUsers,
   users,
   fetchingUsers,
@@ -92,10 +93,21 @@ function UserList({
 
   const handleInvite = async (user, role) => {
     
-    const fromUser = JSON.parse(localStorage.getItem("spotlight-user"));
+    const fromUser = JSON.parse(localStorage.getItem("spotlight-user")); //currently loggedin user
+
+// Inside a try block, it checks if a function named createMembership exists. If it does, it proceeds with inviting the user to the event:
+
+// It calls the createMembership function with an object containing details such as eventId, teamId, userId, name, email, and role.
+// If the invitation is successful, it displays a success message using toast.success().
+// It then sends a notification to the invited user informing them about the invitation and providing a link to the event page.
+// If the createMembership function does not exist (likely indicating that the backend does not support inviting users), it checks if the user has already joined the event:
+
+
+
     try {
       if (typeof createMembership === "function") {
         const res = await createMembership({
+          email: email, 
           eventId: id,
           teamId: events?.teamId,
           userId: user.userId,

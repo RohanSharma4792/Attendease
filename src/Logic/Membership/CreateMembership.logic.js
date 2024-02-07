@@ -27,8 +27,8 @@ export default function CreateMembershipLogic(teamId) {
       userId,
       "",
       name
-    );
-    console.log(res);
+      );
+      // console.log(res);
     
     setTeamMembers((prev) => [...prev, res]);
     setMemberCount((prev) => prev + 1);
