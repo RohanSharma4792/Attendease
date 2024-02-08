@@ -63,7 +63,6 @@ export default function RsvpLogic(event) {
 
   const approveRsvp = async (user) => {
     const {teamId,userId, name, email, documentId, eventName, eventId} = user;
-
     try {
       const teams = new Teams(client);
       const res = await teams.createMembership(
@@ -99,6 +98,7 @@ export default function RsvpLogic(event) {
     catch(err) {
       
       toast.error(err.message);
+      console.log(err.message)
     }
   }
 
@@ -121,7 +121,7 @@ export default function RsvpLogic(event) {
         process.env.REACT_APP_RSVP_COLLECTION_ID,
         documentId
       )
-      await sendNotification({
+        sendNotification({
         userId: userId,
         fromUserId: spotlightUser?.$id,
         fromUserName: spotlightUser?.name,
