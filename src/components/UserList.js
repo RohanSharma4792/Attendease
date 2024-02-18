@@ -102,8 +102,6 @@ function UserList({
 // It then sends a notification to the invited user informing them about the invitation and providing a link to the event page.
 // If the createMembership function does not exist (likely indicating that the backend does not support inviting users), it checks if the user has already joined the event:
 
-
-
     try {
       if (typeof createMembership === "function") {
         const res = await createMembership({
@@ -162,6 +160,7 @@ function UserList({
     } catch (err) {
       
       toast.error(err.message);
+      console.log(err.message)
     } finally {
     }
   };

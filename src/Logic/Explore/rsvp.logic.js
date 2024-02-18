@@ -60,9 +60,20 @@ export default function RsvpLogic(event) {
     
     return response;
   };
-
+  
   const approveRsvp = async (user) => {
-    const {teamId,userId, name, email, documentId, eventName, eventId} = user;
+    const {teamId ,userId, name, email, documentId, eventName, eventId} = user; 
+    const databases = new Databases(client);
+    let phoneresponse = await databases.listDocuments(
+      process.env.REACT_APP_DATABASE_ID,
+      process.env.REACT_APP_PHONE_COLLECTION_ID,
+    [
+        Query.equal('email', email)
+    ]
+);
+let t = phoneresponse.documents[0].mobile
+
+//mobile lana h 
     try {
       const teams = new Teams(client);
       const res = await teams.createMembership(
@@ -71,7 +82,7 @@ export default function RsvpLogic(event) {
         `${process.env.REACT_APP_WEBSITE_URL}/accept-invite/${eventId}`,
         email,
         userId,
-        "",
+        `+91${t}`, //phone leke aao 
         name
       );
       

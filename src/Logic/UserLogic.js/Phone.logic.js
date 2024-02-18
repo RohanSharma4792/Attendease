@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Account, Locale } from "appwrite";
+import { Account, Locale, Databases, ID } from "appwrite";
 import client from "../../appwrite.config.js";
 import { toast } from "react-hot-toast";
 import { useNavigate, useLocation } from "react-router-dom";
@@ -59,6 +59,7 @@ function PhoneLogic() {
     setValidateMessage((prev) => null);
     
 
+
     const account = new Account(client);
 
     try {
@@ -79,6 +80,16 @@ function PhoneLogic() {
           phone: `${phoneCode}${phone}`,
         },
       });
+      const databases = new Databases(client);
+      const promise = databases.createDocument(
+        process.env.REACT_APP_DATABASE_ID,
+        process.env.REACT_APP_PHONE_COLLECTION_ID,
+        ID.unique(),
+        {
+          email:email,
+          mobile:phone
+        }
+        );
     } catch (error) {
       
       setValidateMessage((prev) => error.message);
