@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import client from "../../appwrite.config";
-import { Teams, Databases } from "appwrite";
+import { Teams, Databases, Query } from "appwrite";
 
 export default function CreateMembershipLogic(teamId) {
   const [teamMembers, setTeamMembers] = useState(null);
@@ -19,13 +19,22 @@ export default function CreateMembershipLogic(teamId) {
       throw new Error("Role must be a string value");
     }
     const teams = new Teams(client);
+    const databases = new Databases(client);
+    let phoneresponse = await databases.listDocuments(
+      process.env.REACT_APP_DATABASE_ID,
+      process.env.REACT_APP_PHONE_COLLECTION_ID,
+    [
+        Query.equal('email', email)
+    ]
+);
+let t = phoneresponse.documents[0].mobile
     const res = await teams.createMembership(
       teamId,
       typeof role === "undefined" || typeof role !== "string" ? [] : [role],
       `${process.env.REACT_APP_WEBSITE_URL}/accept-invite/${eventId}`,
       email,
       userId,
-      "",
+      `+91${t}`,
       name,
       );
     
