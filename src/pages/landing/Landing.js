@@ -76,9 +76,9 @@ function Landing() {
             style={{ flexBasis: "50%" }}
           >
             <h1 id="h1text" className=" text-2xl md:text-4xl lg:text-6xl text-slate-100 font-bold leading-relaxed lg:leading-normal drop-shadow-2xl">
-              Spotlight Your Creativity
+              Highlight your imaginative flair
               <br />
-              Curate Unforgettable Events
+              by crafting unforgettable experiences.
             </h1>
             <p style={{color:"white"}}className=" md:max-w-[90%] py-4 text-slate-400">
               RSVP and Management Made Effortless for Creators
