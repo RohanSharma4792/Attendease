@@ -33,7 +33,7 @@ const data = [
   {
     title: "Session Management",
     description:
-      "User's privacy is our priority and that's why its made easy using our efficient session management for each and every user. User's can operate their id's from one session only which means they won't be able to use their id on some other device simultaneously",
+      "User's privacy is our priority and that's why its made easy using our efficient session management for each and every user. User's can operate their id's from one session only which means they won't be able to use their id on some other device simultaneously.",
     icon: <IoLockClosed />,
   },
   {
