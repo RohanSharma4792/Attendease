@@ -12,6 +12,7 @@ import {
   IoArrowDownCircleOutline,
   IoArrowForward,
   IoCreateOutline,
+  FaUnlockAlt,
   IoNotificationsOutline,
   IoPeople,
   IoPeopleOutline,
@@ -28,6 +29,12 @@ const data = [
     description:
       "Seamlessly create and manage events with our intuitive event creation feature. Specify event details, such as date, time, location, and description, to provide a clear picture for your attendees. Customize event settings, add event images, and set ticket options effortlessly.",
     icon: <IoCreateOutline />,
+  },
+  {
+    title: "Session Management",
+    description:
+      "User's privacy is our priority and that's why its made easy using our efficient session management for each and every user. User's can operate their id's from one session only which means they won't be able to use their id on some other device simultaneously",
+    icon: <FaUnlockAlt />,
   },
   {
     title: "Realtime Notifications",
