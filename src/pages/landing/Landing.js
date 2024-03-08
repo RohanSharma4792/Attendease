@@ -63,7 +63,7 @@ const data = [
   {
     title: "Download Attendee List",
     description:
-      "Staying always connected is unsure in the age of internet. So SpotLight lets the event owners download a list of attendees for each event with our attendee list download feature. Export attendee lists in XLSX format for easy access and management.",
+      "Staying always connected is unsure in the age of internet. So Attendease lets the event owners download a list of attendees for each event with our attendee list download feature. Export attendee lists in XLSX format for easy access and management.",
     icon: <MdOutlineFileDownload />,
   }
 ];
