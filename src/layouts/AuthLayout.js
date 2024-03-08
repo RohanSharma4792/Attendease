@@ -27,7 +27,7 @@ function AuthLayout() {
             <p>
               {pageTitle === "Sign in" ? (
                 <>
-                  New to SpotLight? Create an account{" "}
+                  New to Attendease? Create an account{" "}
                   <Link className="underline text-primary" to={button?.link}>
                     here
                   </Link>
