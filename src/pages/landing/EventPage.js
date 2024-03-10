@@ -57,7 +57,7 @@ function EventPage() {
       onClick={handleRSVP}
       className={`primary-btn disabled:opacity-60`}
     >
-      {price <= 0 ? "RSVP" : "BUY NOW"}
+      {price <= 0 ? "RSVP" : "RSVP NOW"}
     </button>
   );
 
@@ -218,12 +218,12 @@ function EventPage() {
             </h2>
             <div className="inline-flex items-center justify-between w-full">
               <h2 className="inline-flex items-center gap-2 font-extrabold font-grostek text-xl mt-2">
-                <IoWalletOutline />{" "}
+                {/* <IoWalletOutline /> */}{" "}
                 {price <= 0 ? (
-                  "Free"
+                  "Rsvp Now"
                 ) : (
                   <>
-                    <MdCurrencyRupee />
+                    {/* <MdCurrencyRupee /> */}
                     {price}
                   </>
                 )}

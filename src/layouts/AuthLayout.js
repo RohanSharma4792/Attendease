@@ -4,6 +4,7 @@ import { useLocation } from "react-router-dom";
 import BackBtn from "../components/BackBtn";
 import Brand from "../components/Brand";
 import Splash from "../assets/images/pattern1.jpg";
+// import { account } from '../appwrite.config';
 
 function AuthLayout() {
   const { pathname } = useLocation();
@@ -12,6 +13,14 @@ function AuthLayout() {
     text: pathname.includes("login") ? "Sign Up" : "Login",
     link: pathname.includes("login") ? "/auth/signup" : "/auth/login",
   };
+  // const googleAuth=(e)=>{
+  //   e.preventDefault();
+  //   account.createOAuth2Session(
+  //     "google",
+  //     "http://localhost:3000/",
+  //     "http://localhost:3000/login"
+  //   )
+  // }
   const pageTitle = pathname.includes("login")
     ? "Sign in"
     : "Create an account";
@@ -27,6 +36,19 @@ function AuthLayout() {
             <p>
               {pageTitle === "Sign in" ? (
                 <>
+                <span className="mx-80">Or</span>
+                <span>
+                <div class="flex items-center justify-center">
+                    <button
+                    //  onClick={(e)=>googleAuth(e)}
+                    class="mx-30 px-20 py-2 border flex gap-2 border-black-200 dark:border-slate-700 rounded-lg text-slate-700 dark:text-black-200 hover:slate-400 dark:hover:border-slate-500 hover:text-slate-900 dark:hover:text-slate-300 hover:shadow transition duration-150">
+                        <img class="w-6 h-6" src="https://www.svgrepo.com/show/475656/google-color.svg" loading="lazy" alt="google logo"/>
+                        <span>Login with Google</span>
+                    {/* button for google */}
+                      
+                    </button> 
+                  </div>
+                    </span>
                   New to Attendease? Create an account{" "}
                   <Link className="underline text-primary" to={button?.link}>
                     here
