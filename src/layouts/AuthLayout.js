@@ -36,7 +36,7 @@ function AuthLayout() {
             <p>
               {pageTitle === "Sign in" ? (
                 <>
-                <span className="mx-80">Or</span>
+                {/* <span className="mx-80">Or</span> */}
                 <span>
                 <div class="flex items-center justify-center">
                     
