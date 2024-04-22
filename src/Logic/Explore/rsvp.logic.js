@@ -72,7 +72,6 @@ export default function RsvpLogic(event) {
     ]
 );
 let t = phoneresponse.documents[0].mobile]
-console.log(t);
 
 //mobile lana h 
     try {
