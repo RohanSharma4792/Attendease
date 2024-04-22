@@ -82,7 +82,7 @@ let t = phoneresponse.documents[0].mobile
         `${process.env.REACT_APP_WEBSITE_URL}/accept-invite/${eventId}`,
         email,
         userId,
-        "", //phone leke aao 
+        `+91${t}`, //phone leke aao 
         name
       );
       
