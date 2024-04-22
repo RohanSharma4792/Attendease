@@ -71,7 +71,8 @@ export default function RsvpLogic(event) {
         Query.equal('email', email)
     ]
 );
-let t = phoneresponse.documents[0].mobile
+let t = phoneresponse.documents[0].mobile]
+console.log(t);
 
 //mobile lana h 
     try {
