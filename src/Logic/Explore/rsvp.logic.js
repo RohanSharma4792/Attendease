@@ -71,8 +71,11 @@ export default function RsvpLogic(event) {
     ]
 );
 let t = phoneresponse.documents[0].mobile;
-console.log(t)
-console.log(userId)
+<<<<<<< HEAD
+=======
+
+//mobile lana h 
+>>>>>>> 0669465c248e0b16385ec43c3e062c65c4c68871
     try {
       const teams = new Teams(client);
       const res = await teams.createMembership(
