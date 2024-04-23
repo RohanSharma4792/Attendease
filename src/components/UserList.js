@@ -111,7 +111,8 @@ function UserList({
           userId: user.userId,
           name: user.name,
           email: user.email,
-          role,
+          phone:user.phone,
+          role
         });
         
         toast.success(`${user.name} has been invited to the event`);

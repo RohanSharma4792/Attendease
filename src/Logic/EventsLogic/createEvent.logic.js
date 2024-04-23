@@ -5,6 +5,7 @@ import { categories } from "./categories";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-hot-toast";
 import { useSearchParams } from "react-router-dom";
+import { upload } from "@testing-library/user-event/dist/upload";
 
 function CreateEventLogic() {
   const [validateMessage, setValidateMessage] = useState(null);

@@ -13,6 +13,7 @@ export default function CreateMembershipLogic(teamId) {
     name,
     email,
     role,
+    phone
   }) {
     
     if (typeof role !== "string") {
@@ -27,14 +28,14 @@ export default function CreateMembershipLogic(teamId) {
         Query.equal('email', email)
     ]
 );
-let t = phoneresponse.documents[0].mobile
+// let t = phoneresponse.documents[0].mobile
     const res = await teams.createMembership(
       teamId,
       typeof role === "undefined" || typeof role !== "string" ? [] : [role],
       `${process.env.REACT_APP_WEBSITE_URL}/accept-invite/${eventId}`,
       email,
       userId,
-      `+91${t}`,
+      phone,
       name,
       );
     

@@ -13,16 +13,17 @@ export default function NotificationProvider({ children }) {
 
     const toggleNotificationBar = (e) => {
         e?.preventDefault();
-        setShow(prev => !prev);
+        setShow(prev => !prev); 
         setUnreadNotifications(prev => 0);
     }
 
     const sendNotification = useCallback(async (data) => {
+        console.log(data)
         try {
             const db = new Databases(client);
             const res = await db.createDocument(
                 process.env.REACT_APP_DATABASE_ID,
-                process.env.REACT_APP_EVENTS_COLLECTION_ID,
+                process.env.REACT_APP_NOTIFICATIONS_COLLECTION_ID,
                 ID.unique(),
                 data
             );

@@ -13,14 +13,6 @@ function AuthLayout() {
     text: pathname.includes("login") ? "Sign Up" : "Login",
     link: pathname.includes("login") ? "/auth/signup" : "/auth/login",
   };
-  // const googleAuth=(e)=>{
-  //   e.preventDefault();
-  //   account.createOAuth2Session(
-  //     "google",
-  //     "http://localhost:3000/",
-  //     "http://localhost:3000/login"
-  //   )
-  // }
   const pageTitle = pathname.includes("login")
     ? "Sign in"
     : "Create an account";

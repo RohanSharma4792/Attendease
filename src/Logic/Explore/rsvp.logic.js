@@ -57,7 +57,6 @@ export default function RsvpLogic(event) {
         Query.equal("teamId", event?.teamId),
       ]
     );
-    
     return response;
   };
   
@@ -71,9 +70,9 @@ export default function RsvpLogic(event) {
         Query.equal('email', email)
     ]
 );
-let t = phoneresponse.documents[0].mobile
-
-//mobile lana h 
+let t = phoneresponse.documents[0].mobile;
+console.log(t)
+console.log(userId)
     try {
       const teams = new Teams(client);
       const res = await teams.createMembership(
@@ -82,7 +81,7 @@ let t = phoneresponse.documents[0].mobile
         `${process.env.REACT_APP_WEBSITE_URL}/accept-invite/${eventId}`,
         email,
         userId,
-        `+91${t}`, //phone leke aao 
+        `+91${t}`,
         name
       );
       
